@@ -1,206 +1,194 @@
-# Sleep Quality Prediction AI 🌙
+<div align="center">
 
-![GitHub last commit](https://img.shields.io/badge/last%20commit-today-brightgreen)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+# 🌙 Sleep Quality Prediction AI
 
-## 1. Project Overview
-Welcome to the **Sleep Quality Prediction AI** project! 
+[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
+[![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.8.0-orange.svg)](https://scikit-learn.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains a robust, end-to-end machine learning system designed to reliably predict a user's **Quality of Sleep** heavily based on their daily lifestyle and physical habits. Sleep is an essential component of human health, fundamentally affecting productivity, mental wellness, and physiological recovery. 
+*A production-ready Machine Learning system that predicts sleep quality based on your lifestyle habits.*
 
-The primary purpose of this AI model is to analyze patterns and hidden correlations between various daily activities (like exercise frequencies, daily steps, and stress) and sleep metrics to provide an explicit, out-of-10 assessment forecasting how well a person will sleep. By identifying these patterns clearly, this application helps individuals better understand and directly modify their routines to elevate their rest!
+[Overview](#-project-overview) • 
+[Features](#-key-features) • 
+[Dataset](#-dataset-insights) • 
+[Visualizations](#-data-visualizations) • 
+[Models](#-machine-learning-models) • 
+[Installation](#-installation--usage)
 
----
-
-## 2. Features Section
-This repository represents a fully production-ready framework complete with:
-
-- **End-to-end Machine Learning Pipeline:** An automated data script running dynamic extraction, permutation, and pipeline validation effortlessly.
-- **Data Preprocessing & Cleaning:** Dynamic median imputation and localized categorical parsing ensuring entirely clean arrays.
-- **Automated Feature Selection:** Natively evaluates base Random Forest parameter tree weights to drop weak or unrelated columns protecting efficiency.
-- **Model Training & Optimization:** Evaluates independent models sweeping distinct hyperparameter grids iteratively to find absolute peaks.
-- **GUI-Based Prediction System:** A clean, beautifully accessible desktop application built cleanly with Tkinter containing logic gating.
-- **Batch CSV System Extraction:** A CLI mapping integration automating hundreds of validation predictions flawlessly tracking outputs.
-- **Visualization of Dataset Relationships:** Mathematical rendering frameworks parsing correlation matrices and prediction metrics graphically.
-- **Prediction Result Interpretation:** Color-coded confidence feedback evaluating specific score thresholds into health recommendations.
+</div>
 
 ---
 
-## 3. Dataset Description
-This project harnesses two diverse datasets to construct its underlying logic matrices:
-1. **`data111.csv`**: Broadens lifestyle context by bridging internal constraints such as stress levels, step frequencies, and heart rates alongside target quality ratings.
-2. **`Sleep_Efficiency.csv`**: Contains extensive tracked data relating strictly to physical bedtimes, sleep efficiency percentages, and awakening frequencies.
+## 📖 Project Overview
 
-### Key Predictor Features Evaluated:
-- **Sleep Duration:** Length of individual sleep tracked physically (measured in hours).
-- **Sleep Efficiency:** Ratio of active time asleep over absolute time spent resting in bed (0.0 - 1.0).
-- **Stress Level:** Daily self-reported mental and physiological bounds measuring severity (1-10).
-- **Physical Activity & Exercise Frequency:** Core measurements checking consistency and workout schedules.
-- **Heart Rate & Daily Steps:** Key background physical health baseline variables.
-- **Awakenings:** The aggregate amount of times an individual woke up through the sleep cycle.
+Welcome to the **Sleep Quality Prediction AI**! 
 
-### Sample Dataset Preview Matrix
+Sleep is the ultimate foundation of human health, directly influencing productivity, emotional resilience, and physical recovery. This repository provides a complete, end-to-end artificial intelligence framework that analyzes daily habits—such as *exercise frequency, daily steps, and stress levels*—to forecast an individual's **Quality of Sleep** (scored out of 10).
+
+By recognizing these hidden health patterns, this tool helps users identify exactly which daytime routines they need to adjust to achieve perfect rest at night.
+
+---
+
+## ✨ Key Features
+
+This project is built to true production-grade standards, bridging raw data into actionable insights:
+
+- 🧠 **Advanced ML Pipeline:** Fully automated data extraction, imputation, scaling, and validation.
+- 🧹 **Robust Preprocessing:** Handles missing values and dynamically encodes categorical lifestyle data natively.
+- 🎯 **Automated Feature Selection:** Identifies and isolates the most impactful health factors utilizing regressor weights.
+- 📈 **Hyperparameter Tuning:** Sweeps optimal model configurations using robust 5-Fold Cross Validation grids.
+- 🖥️ **Interactive Desktop GUI:** A stunning, simple-to-use user application built with Tkinter.
+- 📂 **CSV Batch Processing:** Evaluate hundreds of patients simultaneously via command-line integrations.
+
+---
+
+## 📊 Dataset Insights
+
+This model is trained on a merged synergy of two extraordinarily comprehensive health datasets:
+1. **`data111.csv`**: Broad lifestyle metrics including resting heart rates, step counts, and subjective stress levels.
+2. **`Sleep_Efficiency.csv`**: Target-specific tracking including physical bedtimes, targeted sleep duration, and nightly awakenings.
+
+### 🔍 Core Features Tracked
+| Feature | Description |
+| :--- | :--- |
+| **Sleep Duration** | Total physical hours effectively slept. |
+| **Stress Level** | Self-reported daily stress severity (Scale: 1-10). |
+| **Heart Rate** | Resting heart beats per minute (BPM). |
+| **Daily Steps** | Total active steps taken cumulatively per day. |
+| **Awakenings** | Frequency of waking up mid-cycle during the night. |
+
+<details>
+<summary><b>Click to view a sample dataset matrix</b></summary>
+
 | Sleep Duration | Stress Level | Heart Rate | Daily Steps | Sleep Efficiency | Awakenings | Quality of Sleep |
 |----------------|--------------|-------------|-------------|------------------|------------|------------------|
 | 6.5            | 7            | 75          | 5000        | 0.85             | 1.0        | 6.3              |
 | 8.0            | 4            | 65          | 10000       | 0.95             | 0.0        | 9.4              |
 
----
-
-## 4. Data Visualization Section
-Understanding the background mathematics simplifies interpreting exactly how the AI derives its evaluations. *(Please ensure visual `.png` files are correctly mapped to your `/images/` directory!)*
-
-**Correlation Heatmap**  
-Shows the direct linear relationships mathematically existing across variables. Deep red asserts positive scaling context, while deep blue highlights absolute inverse bounds.
-![Correlation Heatmap](images/correlation_heatmap.png)
-
-**Top Feature Importances**  
-Displays the absolute heaviest weights directing algorithm evaluation targets. Notice how Stress Level and Sleep Duration commonly dominate these factors!
-![Feature Importance Plot](images/feature_importance.png)
-
-**Sleep Duration vs Quality**  
-Highlights the explicit direct scatter correlation evaluating how longer hours naturally build quality structures.
-![Sleep Duration vs Quality Scatter Plot](images/sleep_duration_vs_quality.png)
-
-**Stress Level vs Quality**  
-Demonstrates the distinct inverse mapping where highly elevated stress parameters aggressively decay quality outcomes.
-![Stress Level vs Quality Scatter Plot](images/stress_vs_quality.png)
-
-**Prediction vs Actual Verification**  
-Visualizes the champion model's exact variance accuracy. Points tracking directly along the center trendline prove incredibly high testing accuracy!
-![Prediction vs Actual Plot](images/prediction_vs_actual.png)
+</details>
 
 ---
 
-## 5. Machine Learning Model Section
-To guarantee optimization, the master pipeline integrates and trains three explicit ML architectures simultaneously running against a robust 5-Fold Cross Validation suite:
-- **Linear Regression:** Standard tracking baseline assessing independent linear variable limits.
-- **Random Forest Regressor:** A complex ensemble branching multiple internal decision tree outputs tracking subsets.
-- **Gradient Boosting Regressor:** Sequential decision optimization automatically correcting mathematical errors produced by prior sequential tracking steps.
+## 📉 Data Visualizations
 
-### Absolute Model Comparison Results Tracking
-1. **Linear Regression**: $R^2$ = 0.9471 | MSE = 0.0860
-2. **Random Forest**: $R^2$ = 0.9939 | MSE = 0.0100
-3. **Gradient Boosting: $R^2$ = 0.9945 | MSE = 0.0090**
+Understanding the model's mathematics is crucial! Below are the insights automatically extracted during our framework Exploratory Data Analysis (EDA).
 
-**Gradient Boosting Regressor** was mathematically locked and formally serialized as the ultimate `best_model.pkl`. It decisively captured minimizing absolute Mean Squared Error (MSE) metrics while simultaneously peaking scaling predictability across extreme lifestyle bounds!
+### 1. Feature Importance
+This chart illustrates which habits hold the heaviest mathematical weight in determining your rest. *(Notice how Stress Level and Sleep Duration completely dominate!)*  
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Afra4509/sleepbuathealth/main/feature_importance.png" alt="Feature Importance" width="800"/>
+</div>
+
+### 2. Prediction vs Actual Validation
+A tight clustering mapping directly along the center trendline proves our Gradient Boosting model's incredibly high accuracy verifying against unseen data.  
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Afra4509/sleepbuathealth/main/prediction_vs_actual.png" alt="Prediction vs Actual" width="800"/>
+</div>
+
+### 3. Correlation Heatmap
+A mathematical map displaying the direct linear relationships bounding every single combined lifestyle variable.  
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Afra4509/sleepbuathealth/main/correlation_heatmap.png" alt="Correlation Heatmap" width="800"/>
+</div>
+
+### 4. Stress vs Quality
+Highlights a highly explicit inverse relationship: as daily stress bounds increase, rest quality aggressively degrades.  
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Afra4509/sleepbuathealth/main/stress_vs_quality.png" alt="Stress vs Quality" width="800"/>
+</div>
+
+### 5. Sleep Duration vs Quality
+Shows a heavy positive scaling bound; securing sufficient hours in bed genuinely forms the absolute baseline for deep rest capabilities.  
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Afra4509/sleepbuathealth/main/sleep_duration_vs_quality.png" alt="Sleep Duration vs Quality" width="800"/>
+</div>
 
 ---
 
-## 6. Project Structure
-The repository is structured to separate programmatic pipeline frameworks gracefully away from export variables:
+## 🤖 Machine Learning Models
+
+Our master pipeline tracks and evaluates three unique algorithms simultaneously against the dataset variance:
+
+1. **Linear Regression:** Standard testing baseline performance tracking.
+2. **Random Forest Regressor:** A complex ensemble branching multiple internal decision tree outputs tracking subsets.
+3. **Gradient Boosting Regressor 🏆:** Sequential optimization automatically minimizing absolute residual errors.
+
+### 🏆 Final Output Benchmark (Gradient Boosting)
+| Metric | Verification Score | Interpretation |
+| :--- | :---: | :--- |
+| **R² Score** | **0.9945** | The model accurately frames and accounts for **99.45%** of the dataset variance securely. |
+| **MSE** | **0.0090** | Predictions deviate by less than a microscopic fractional bound from absolute reality! |
+
+---
+
+## 🏗️ Project Structure
+
 ```text
 sleepbuathealth/
 │
-├── datasets/
-│   ├── Sleep_Efficiency.csv     # First targeted dataset
-│   ├── data111.csv              # Second unified feature list
-│   └── input_data.csv           # Modular testing input for automated pipelines
-│
-├── models/
-│   ├── best_model.pkl           # Final serialized algorithm evaluation network
-│   ├── scaler.pkl               # Standard parameter scaling wrapper constraints
-│   ├── imputer.pkl              # Missing logic replacement wrapper
-│   └── selector.pkl             # Dynamic variable feature selector dict
-│
-├── images/
-│   ├── correlation_heatmap.png
-│   ├── feature_importance.png
-│   ├── sleep_duration_vs_quality.png
-│   ├── stress_vs_quality.png
-│   └── prediction_vs_actual.png
-│
-├── predict.py           # Core CLI Prediction utility (Single bindings & Batch)
+├── datasets/            # Raw combined training data & batch testing inputs
+├── models/              # Verified serialized artifacts (best_model.pkl, scaler.pkl)
+├── predict.py           # Core CLI Prediction utility (Single bindings & Batch scaling)
 ├── gui_predict.py       # Embedded Desktop Tkinter Graphical User Interface 
-├── model_pipeline.py    # Master mathematical algorithm generation script 
-├── requirements.txt     # Global repository dependency installer bounds
-└── README.md            # Project Operational Documentation
+├── model_pipeline.py    # Master mathematical algorithm generation pipeline script 
+├── requirements.txt     # Global repository Python environment dependency listings
+└── README.md            # Project Operational Documentation Core
 ```
-*Tip: Sort your generated ML outputs into the `datasets/`, `models/`, and `images/` folders directly for absolute environment cleanliness!*
 
 ---
 
-## 7. Installation Instructions
-Follow these precise terminal steps to deploy and explore the AI parameters natively locally:
+## 🚀 Installation & Usage
 
-1. **Clone the targeted repository**
-   ```bash
-   git clone https://github.com/Afra4509/sleepbuathealth
-   cd sleepbuathealth
-   ```
-2. **Install all cross-environment dependencies universally**
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. **Launch the User Interface Visual Platform**
-   ```bash
-   python gui_predict.py
-   ```
-4. **Evaluate programmatic system batch tests externally**
-   ```bash
-   python predict.py
-   ```
+### 1. Installation
+Deploy the AI securely into your local deployment machine:
+```bash
+git clone https://github.com/Afra4509/sleepbuathealth
+cd sleepbuathealth
+pip install -r requirements.txt
+```
 
----
+### 2. Using the Desktop Application (GUI)
+Experience the model natively through our customized interface:
+```bash
+python gui_predict.py
+```
+> **How to use:** Enter your daily metrics into the respective prompt fields, click **Predict Sleep Quality**, and instantly receive your calculated score alongside generated personalized health recommendations!
 
-## 8. Usage Instructions
-### Running the GUI Tracker (`gui_predict.py`)
-1. Run `python gui_predict.py` directly bridging your system framework constraints.
-2. Enter your precise baseline lifestyle metrics accurately mapping individual numbers directly.
-3. Click the explicit **"Predict Sleep Quality"** action target box.
-4. Read your output evaluation immediately checking both the generated scale index score exactly, the specific prediction visual bar chart, and explicitly reviewing generated targeted health recommendations.
-
-### Resolving Batch Matrix Predictions (`predict.py`)
-Processing datasets iterating heavily across hundreds of independent columns is simple. Pass targeting variables universally:
+### 3. Command Line Batch Predictions
+Executing algorithmic bulk predictions scaling across hundreds of rows concurrently via CSVs:
 ```bash
 python predict.py --csv datasets/input_data.csv
 ```
-This automatically parses entire rows evaluating the variables simultaneously natively and outputs the new predicted array results explicitly inside a safe new `batch_predictions.csv` tracking file.
+*Outputs are calculated and saved instantly to a new `batch_predictions.csv` trailing document.*
 
 ---
 
-## 9. Example Prediction Section
-Here is a strict mathematical pipeline example displaying explicit system evaluation outcomes scaling bounds accurately:
+## 💡 Example CLI Prediction
+**Programmatic Input Command:**
+```bash
+python predict.py --sleep_duration 6.5 --stress_level 7 --exercise_frequency 2 --heart_rate 75 --daily_steps 5000
+```
 
-**Input Configuration Map:**
-- Sleep Duration: `6.5`
-- Stress Level: `7`
-- Exercise Frequency: `2`
-
-**Output Return Parameter Format:**
+**Evaluated Output Return:**
 ```text
 Predicted Quality of Sleep: 6.3 / 10
 ```
 
 ---
 
-## 10. Results Section
-Our integrated pipeline verified extensive parameters validating strictly through complex mathematical array evaluations:
-
-**Gradient Boosting Regressor (Winner):**
-- **$R^2$ Score: 0.9945**
-- **MSE: 0.0090**
-
-**What this mathematically represents:** 
-An $R^2$ scaling ratio standing consistently at `0.9945` highlights the mathematical array actively captures completely identifying **99.45%** of all unique tracked lifestyle quality modifications! Minimizing the Mean Squared Error strictly beneath `0.01` guarantees your output metrics scale actively holding within minimal fractions of completely reliable absolute accuracy constraints!
+## 🔮 Future Improvements
+- ⌚ **Wearable API Integration:** Direct automated telemetry limits streaming from Oura Rings and Apple Watches.
+- 📱 **Mobile Application Wrappers:** Porting the exact framework architectures explicitly into iOS Swift processing.
+- 📡 **Live Dashboarding Servers:** Real-time WebSockets tracking integrations targeting ongoing telemetry.
 
 ---
 
-## 11. Future Improvements Section
-Scaling this programmatic analysis safely incorporates heavy opportunities moving forward globally bridging bounds:
-- ⌚ **Wearable Device Extraction Mapping:** Expanding automated parameter retrieval streaming natively through APIs from Apple Watch/Oura.
-- 📱 **Mobile Application Integration Structures:** Re-wrapping parameters actively targeting iOS bridging Swift bounds exclusively.
-- 📡 **Real-time Monitoring Hooks:** Connecting predictive outputs constantly executing API background tasks tracking web-app live visualization loops.
-- 📊 **Target Dataset Scale Growth Limits:** Expanding algorithmic testing processing demographics incorporating heavy variations targeting ages.
+## 📝 License
+This exact project pipeline is completely open-source and universally licensed under the [**MIT License**](LICENSE). Feel free to pull, adapt, restructure, or evaluate the logic entirely without standard bounds.
 
 ---
 
-## 12. License Section
-This specific tracking pipeline structure algorithm is safely bounded strictly explicitly open-source universally using the absolute **MIT License**. Adapt, restructure, or evaluate native internal loops natively without external bounds.
-
----
-
-## 13. Author Section
-- **Author:** Afra  
-- **Project Concept:** Sleep Quality Prediction AI Platform System Framework
-- **GitHub Target Output Constraint Repository:** [sleepbuathealth](https://github.com/Afra4509/sleepbuathealth)
+<div align="center">
+  <b>Developed with ❤️ by Afra</b><br>
+  <i>Sleep Quality Prediction AI Platform System Framework</i>
+</div>
