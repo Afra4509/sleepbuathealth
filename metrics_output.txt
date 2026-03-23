@@ -1,0 +1,10 @@
+--- Model Evaluation ---
+Linear Regression -> MSE: 0.0860 | R2: 0.9471
+Random Forest Regressor -> MSE: 0.0100 | R2: 0.9939
+Gradient Boosting Regressor -> MSE: 0.0090 | R2: 0.9945
+
+>> BEST MODEL: Gradient Boosting Regressor (R2=0.9945) <<
+
+--- Test Prediction Execution ---
+Inputs: Sleep Duration=6.5, Stress Level=7, Exercise frequency=2, Heart Rate=75, Daily Steps=5000
+Predicted Quality of Sleep: 6.259
