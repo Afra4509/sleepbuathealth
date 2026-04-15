@@ -183,8 +183,6 @@ Predicted Quality of Sleep: 6.3 / 10
 
 ---
 
-## 📝 License
-This exact project pipeline is completely open-source and universally licensed under the [**MIT License**](LICENSE). Feel free to pull, adapt, restructure, or evaluate the logic entirely without standard bounds.
 
 ---
 
